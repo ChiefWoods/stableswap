@@ -25,13 +25,16 @@ anchor-lang = { version = "1.0.2", features = ["init-if-needed"] }
 anchor-spl = "1.0.2"
 
 [dev-dependencies]
-litesvm = "0.12.0"
+litesvm = "0.11.0"
 solana-message = "4.1.1"
 solana-transaction = "4.1.1"
 solana-signer = "3.0.0"
 solana-keypair = "3.0.1"
 anchor-litesvm = "0.4.0"
 litesvm-utils = "0.4.0"
+solana-account = "3.4.0"
+solana-address = "2.6.0"
+litesvm-token = "0.11.0"
 
 
 [lints.rust]

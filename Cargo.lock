@@ -320,7 +320,7 @@ dependencies = [
  "anchor-lang",
  "base64 0.22.1",
  "borsh",
- "litesvm 0.11.0",
+ "litesvm",
  "litesvm-utils",
  "sha2 0.10.9",
  "solana-account",
@@ -1724,76 +1724,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "litesvm"
-version = "0.12.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "236efc1fc49db2af581f221faea4bbc1088dd72d9aa381461eeefef14d48ea1b"
-dependencies = [
- "agave-feature-set",
- "agave-reserved-account-keys",
- "agave-syscalls",
- "ansi_term",
- "bincode",
- "indexmap",
- "itertools 0.14.0",
- "log",
- "serde",
- "solana-account",
- "solana-address 2.6.0",
- "solana-address-lookup-table-interface",
- "solana-bpf-loader-program",
- "solana-builtins",
- "solana-clock",
- "solana-compute-budget",
- "solana-compute-budget-instruction",
- "solana-epoch-rewards",
- "solana-epoch-schedule",
- "solana-feature-gate-interface",
- "solana-fee",
- "solana-fee-structure",
- "solana-hash 3.1.0",
- "solana-instruction",
- "solana-instructions-sysvar",
- "solana-keypair",
- "solana-last-restart-slot",
- "solana-loader-v3-interface",
- "solana-loader-v4-interface",
- "solana-message 3.1.0",
- "solana-native-token",
- "solana-nonce",
- "solana-nonce-account",
- "solana-precompile-error",
- "solana-program-error",
- "solana-program-runtime",
- "solana-rent 3.1.0",
- "solana-sdk-ids",
- "solana-sha256-hasher",
- "solana-signature",
- "solana-signer",
- "solana-slot-hashes",
- "solana-slot-history",
- "solana-stake-interface",
- "solana-svm-callback",
- "solana-svm-log-collector",
- "solana-svm-timings",
- "solana-svm-transaction",
- "solana-system-interface 3.2.0",
- "solana-system-program",
- "solana-sysvar",
- "solana-sysvar-id",
- "solana-transaction 3.1.0",
- "solana-transaction-context",
- "solana-transaction-error",
- "thiserror 2.0.18",
-]
-
-[[package]]
 name = "litesvm-token"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d6cdb7d678bfa9279f8cb29079c976a4d930c7b30070a9687f4d6d64b528e748"
 dependencies = [
- "litesvm 0.11.0",
+ "litesvm",
  "smallvec",
  "solana-account",
  "solana-address 2.6.0",
@@ -1815,7 +1751,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1382a16f4a01ea92afbc40a8151fb92f6a57a265042f0bef168c159c5f60d524"
 dependencies = [
- "litesvm 0.11.0",
+ "litesvm",
  "litesvm-token",
  "solana-keypair",
  "solana-program",
@@ -4298,8 +4234,11 @@ dependencies = [
  "anchor-lang",
  "anchor-litesvm",
  "anchor-spl",
- "litesvm 0.12.0",
+ "litesvm",
+ "litesvm-token",
  "litesvm-utils",
+ "solana-account",
+ "solana-address 2.6.0",
  "solana-keypair",
  "solana-message 4.1.1",
  "solana-signer",
