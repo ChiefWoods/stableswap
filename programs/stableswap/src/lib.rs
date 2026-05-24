@@ -13,6 +13,7 @@ pub use state::*;
 declare_id!("DXTgWdvcdzrRYCmxNTR5SXcTYm5NzfS1XEZDc7ngEeHN");
 
 #[program]
+#[allow(clippy::diverging_sub_expression)]
 pub mod stableswap {
     use super::*;
 
