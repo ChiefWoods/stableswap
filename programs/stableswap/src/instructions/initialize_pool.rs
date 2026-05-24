@@ -80,9 +80,9 @@ impl<'info> InitializePool<'info> {
             );
 
             // Check for duplicate mints
-            for j in 0..i {
+            for token_mint in token_mints {
                 require!(
-                    token_mints[j] != mint_info.key(),
+                    token_mint != mint_info.key(),
                     StableSwapError::DuplicateMint
                 );
             }
