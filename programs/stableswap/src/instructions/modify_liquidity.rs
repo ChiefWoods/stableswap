@@ -76,7 +76,6 @@ impl<'info> ModifyLiquidity<'info> {
         vaults: &[AccountInfo<'info>],
         user_atas: &[AccountInfo<'info>],
         deposits: &[u128],
-        max_amounts: &[u64],
     ) -> Result<()> {
         for (i, vault) in vaults.iter().enumerate() {
             // transfer_checked not used to avoid passing mint accounts
@@ -210,7 +209,7 @@ impl<'info> ModifyLiquidity<'info> {
 
         // Execute transfers and mint LP
         ctx.accounts
-            .transfer_to_vaults(vaults, user_atas, &deposits, &max_amounts)?;
+            .transfer_to_vaults(vaults, user_atas, &deposits)?;
         ctx.accounts.mint_lp_tokens(lp_to_mint)?;
 
         Ok(())
