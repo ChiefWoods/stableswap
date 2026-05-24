@@ -55,7 +55,10 @@ fn derive_pool_address(lp_mint: Address) -> Address {
     Address::find_program_address(&[b"pool", lp_mint.as_ref()], &stableswap::id()).0
 }
 
-pub fn initialize_pool_with_two_mints(ctx: &mut AnchorContext, pool_admin: &Keypair) -> InitializedPool {
+pub fn initialize_pool_with_two_mints(
+    ctx: &mut AnchorContext,
+    pool_admin: &Keypair,
+) -> InitializedPool {
     let lp_mint = Keypair::new();
     let pool = derive_pool_address(lp_mint.pubkey());
 
@@ -104,7 +107,8 @@ pub fn initialize_pool_with_two_mints(ctx: &mut AnchorContext, pool_admin: &Keyp
         AccountMeta::new(mint_b_vault, false),
     ]);
 
-    ctx.execute_instruction(ix, &[pool_admin, &lp_mint]).unwrap();
+    ctx.execute_instruction(ix, &[pool_admin, &lp_mint])
+        .unwrap();
 
     InitializedPool {
         pool,
