@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-use crate::error::StableSwapError;
+use crate::{error::StableSwapError, MAX_FEE_BPS};
 
 pub fn compute_d(reserves: &[u128], amp: u128) -> Result<u128> {
     let n = reserves.len() as u128;
@@ -177,7 +177,7 @@ pub fn calculate_swap(
     let fee_amount = amount_out_before_fee
         .checked_mul(fee_bps as u128)
         .ok_or(StableSwapError::MathOverflow)?
-        .checked_div(10000)
+        .checked_div(MAX_FEE_BPS as u128)
         .ok_or(StableSwapError::MathOverflow)?;
 
     let amount_out = amount_out_before_fee
