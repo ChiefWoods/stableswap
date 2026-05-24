@@ -108,13 +108,6 @@ impl<'info> InitializePool<'info> {
             bump: ctx.bumps.pool,
         });
 
-        msg!(
-            "Pool initialized with {} tokens, A={}, fee={}bps",
-            n_tokens,
-            amplification,
-            fee_bps
-        );
-
         Ok(())
     }
 }

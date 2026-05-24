@@ -137,12 +137,6 @@ impl<'info> Swap<'info> {
             user_output,
             amount_out as u64,
         )?;
-        msg!(
-            "Swap: {} in -> {} out (fee: {})",
-            amount_in,
-            amount_out,
-            fee_amount
-        );
 
         Ok(())
     }
